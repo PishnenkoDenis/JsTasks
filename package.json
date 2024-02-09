@@ -1,0 +1,11 @@
+{
+  "name": "jslearn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./tasks/falsyFilterArray"
+  },
+  "author": "",
+  "license": "ISC"
+}
