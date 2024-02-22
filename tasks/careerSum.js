@@ -18,9 +18,24 @@ function careerSum(a) {
   };
 }
 
+function careerCall(a) {
+  let sum = a;
+
+  return function fun(b) {
+    if (b) {
+      sum += b;
+      return fun;
+    } else {
+      return sum;
+    }
+  };
+}
+
 console.log(add(20, 22)); // -> 42
 console.log(add(20)(22)); // -> 42
 console.log(add(20)()(22)); // -> 42
 console.log(add(20)()()()(22)); // -> 42
 console.log(add(20)()()()()()()()()()()()(22)); // -> 42
 console.log(add()(20)(22)); // -> 42
+console.log(careerCall(1)(2)()); //3
+console.log(careerCall(1)(2)(3)()); //

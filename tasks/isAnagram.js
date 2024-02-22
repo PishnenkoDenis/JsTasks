@@ -13,6 +13,22 @@ function isAnagrams(str1, str2) {
   return str1.split("").sort().join() === str2.split("").sort().join();
 }
 
+function isArrayAnagrams(arr) {
+  const result = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    const key = arr[i].split("").sort().join();
+    if (result[key]) result[key].push(arr[i]);
+    else {
+      result[key] = [];
+      result[key].push(arr[i]);
+    }
+  }
+
+  return Object.values(result);
+}
+
 console.log(allAnagrams(["abcd", "bdac", "cabd"])); // true
 console.log(allAnagrams(["abcd", "bdXc", "cabd"])); // false
 console.log(isAnagrams("abcd", "bdac"));
+console.log(isArrayAnagrams(["abcd", "dcba", "erty", "ytre"]));
